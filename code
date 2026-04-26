@@ -1,0 +1,32 @@
+# Movie Recommendation System (User Input)
+
+movies = {
+    "Avatar": "Sci-Fi Action Adventure",
+    "Titanic": "Romance Drama",
+    "Inception": "Sci-Fi Action Thriller",
+    "Interstellar": "Sci-Fi Drama Adventure",
+    "The Notebook": "Romance Drama",
+    "Avengers": "Action Sci-Fi Superhero",
+    "Joker": "Crime Drama Thriller",
+    "Frozen": "Animation Family Musical"
+}
+
+print("🎬 Movie Recommendation System")
+
+name = input("Enter movie name: ").title()
+
+if name in movies:
+    print("Recommended Movies:")
+
+    selected = movies[name].split()
+
+    for movie in movies:
+        if movie != name:
+            category = movies[movie].split()
+
+            for word in selected:
+                if word in category:
+                    print(movie)
+                    break
+else:
+    print("Movie not found")
